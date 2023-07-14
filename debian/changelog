@@ -1,5 +1,48 @@
-template-repository (1.0-1) unstable; urgency=medium
+liblc3 (1.0.3-4) unstable; urgency=medium
 
-  * Initial release
+  * Restrict autopkgtest to same arches for tests at build time
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Dylan Aïssi <daissi@debian.org>  Tue, 27 Jun 2023 09:46:16 +0200
+
+liblc3 (1.0.3-3) unstable; urgency=medium
+
+  * Upload to unstable
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 26 Jun 2023 09:33:51 +0200
+
+liblc3 (1.0.3-2) experimental; urgency=medium
+
+  * Disable tests on non-key architectures for bluetooth.
+
+ -- Dylan Aïssi <daissi@debian.org>  Fri, 23 Jun 2023 23:34:09 +0200
+
+liblc3 (1.0.3-1) experimental; urgency=medium
+
+  * New upstream version 1.0.3
+  * Drop debian/patches/Fix_numpy_int.patch, included in upstream release
+  * Add libpython3-dev in Build-Deps for tests at build time
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 22 Jun 2023 15:05:44 +0200
+
+liblc3 (1.0.2-1) experimental; urgency=medium
+
+  [ Dylan Aïssi ]
+  * New upstream version 1.0.2
+  * Drop patches included in upstream release
+  * Bump SONAME to liblc3-1
+  * Standards-Version: 4.6.2 (no changes needed)
+  * Inject FLAGS during the dh_auto_test step
+  * Upload to experimental because of the Bookworm freeze
+
+  [ Sebastien Bacher ]
+  * debian/control, debian/rules, debian/tests/control:
+    - enable the upstream tests during the build and also set them as an
+      autopkgtest (Closes: #1024714)
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 27 Feb 2023 10:29:33 +0100
+
+liblc3 (1.0.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #1021532)
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 10 Oct 2022 22:59:57 +0200

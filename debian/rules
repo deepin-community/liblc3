@@ -1,4 +1,15 @@
 #!/usr/bin/make -f
 
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
 %:
-	dh $@
+	dh $@ --buildsystem=meson
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-Dtools=true
+
+override_dh_auto_test:
+ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armhf))
+	V= make test CFLAGS:="$(CPPFLAGS) $(CFLAGS)"
+endif
