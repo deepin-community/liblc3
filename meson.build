@@ -13,14 +13,16 @@
 #  limitations under the License.
 
 project('lc3', 'c',
-	version: '1.0.3',
+	version: '1.1.3',
 	license: 'Apache-2.0',
-	meson_version: '>= 0.47.0',
-	default_options: ['b_lto=true'])
+	meson_version: '>= 0.48.0',
+	default_options: ['buildtype=release', 'b_lto=true'])
 
 cc = meson.get_compiler('c')
 
-if cc.get_id() != 'msvc'
+if cc.get_id() == 'msvc'
+    add_project_arguments(['/wd4244', '/wd4305', '/fp:fast'], language: 'c')
+else
     add_project_arguments('-ffast-math', language: 'c')
 endif
 
@@ -31,4 +33,8 @@ subdir('src')
 
 if get_option('tools')
     subdir('tools')
+endif
+
+if get_option('python')
+    subdir('python')
 endif
