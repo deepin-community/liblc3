@@ -1,3 +1,49 @@
+liblc3 (1.1.3+dfsg-1) unstable; urgency=medium
+
+  * New upstream version 1.1.3+dfsg
+
+ -- Dylan Aïssi <daissi@debian.org>  Tue, 18 Feb 2025 15:42:12 +0100
+
+liblc3 (1.1.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream version 1.1.2+dfsg
+  * Ensure the build profil nocheck is respected
+  * Add salsa-ci-yml
+  * Update debian/copyright
+
+ -- Dylan Aïssi <daissi@debian.org>  Wed, 05 Feb 2025 18:24:43 +0100
+
+liblc3 (1.1.1+dfsg-1) unstable; urgency=medium
+
+  * New upstream version 1.1.1+dfsg
+  * Update symbols file
+  * Add patch fixing issue with rpath
+  * Exclude conformance HTML reports
+  * Fix LDFLAGS injection during dh_auto_test
+
+ -- Dylan Aïssi <daissi@debian.org>  Mon, 20 May 2024 20:50:29 +0200
+
+liblc3 (1.0.4-3) unstable; urgency=medium
+
+  * Cherry-pick upstream patch adding numpy include path (Closes: #1067323)
+  * Refresh debian/copyright
+  * Add debian/upstream/metadata
+
+ -- Dylan Aïssi <daissi@debian.org>  Sat, 23 Mar 2024 22:22:25 +0100
+
+liblc3 (1.0.4-2) unstable; urgency=medium
+
+  * Empty the V variable for the "make clean" target (Closes: #1056142)
+
+ -- Dylan Aïssi <daissi@debian.org>  Thu, 23 Nov 2023 12:07:17 +0100
+
+liblc3 (1.0.4-1) unstable; urgency=medium
+
+  * New upstream version 1.0.4
+  * Delete more files with dh_clean and dh_auto_clean (Closes: #1047907)
+
+ -- Dylan Aïssi <daissi@debian.org>  Sat, 23 Sep 2023 16:29:36 +0200
+
 liblc3 (1.0.3-4) unstable; urgency=medium
 
   * Restrict autopkgtest to same arches for tests at build time
