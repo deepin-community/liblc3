@@ -10,6 +10,11 @@ override_dh_auto_configure:
 		-Dtools=true
 
 override_dh_auto_test:
+ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armhf))
-	V= make test CFLAGS:="$(CPPFLAGS) $(CFLAGS)"
+	V= make test CFLAGS:="$(CPPFLAGS) $(CFLAGS)" LDFLAGS:="$(LDFLAGS)"
 endif
+endif
+
+execute_after_dh_auto_clean:
+	V= make clean
